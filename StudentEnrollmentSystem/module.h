@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 using namespace std;
 
 class module
@@ -23,6 +24,10 @@ public:
 		this->grade_symbol = set_grade_symbol(grade);
 	}
 
+	string get_grade_with_symbol()
+	{
+		return to_string(grade) + grade_symbol;
+	}
 	static string set_grade_symbol(const int grade)
 	{
 		if (grade >= 97) return "A+";

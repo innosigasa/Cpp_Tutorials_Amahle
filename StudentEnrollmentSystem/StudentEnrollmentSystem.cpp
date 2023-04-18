@@ -47,27 +47,28 @@ student enroll_student()
 	int eld_marks;
 	cout << "Enter student marks for this module ( ELD 211 ) :";
 	cin >> eld_marks;
-	module module1 = module("ELD 211", eld_marks);
+	auto module1 = module("ELD 211", eld_marks);
 
 	int epe_marks;
 	cout << "Enter student marks for this module ( EPE 221 ) :";
 	cin >> epe_marks;
-	module module2 = module("EPE 221", epe_marks);
+	auto module2 = module("EPE 221", epe_marks);
 
 	int aec_marks;
 	cout << "Enter student marks for this module ( AEC 201 ) :";
 	cin >> aec_marks;
-	module module3 = module("AEC 201", aec_marks);
+	auto module3 = module("AEC 201", aec_marks);
 
 	int age_marks;
 	cout << "Enter student marks for this module ( AGE 213 ) :";
 	cin >> age_marks;
-	module module4 = module("AGE 213", age_marks);
+	auto module4 = module("AGE 213", age_marks);
 
 	list<module> modules = { module1,module2,module3,module4 };
 
 	string formatted_student_details = to_string(student_number) + "," + initials + "," + surname + "," + sex + "," +
-		to_string(age) + "," + to_string(eld_marks) + "," + to_string(epe_marks) + "," + to_string(aec_marks) + "," + to_string(age_marks);
+		to_string(age) + "," + module1.get_grade_with_symbol() + "," + module2.get_grade_with_symbol() + "," + module3.
+		get_grade_with_symbol() + "," + module4.get_grade_with_symbol();
 
 	return student(student_number, initials, surname, sex, age, modules, formatted_student_details);
 }

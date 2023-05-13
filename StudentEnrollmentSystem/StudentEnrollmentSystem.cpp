@@ -73,13 +73,6 @@ student enroll_student()
 	return student(student_number, initials, surname, sex, age, modules, formatted_student_details);
 }
 
-void get_name(list<string> strs)
-{
-	for (auto str : strs)
-	{
-		cout << str << endl;
-	}
-}
 
 int main()
 {
@@ -87,7 +80,7 @@ int main()
 	bool stop_app = false;
 	do
 	{
-		get_name({"Inno", "Mxo","Thomas"});
+		system("cls");
 		cout << "Please select an option below:"<<endl;
 		cout << "1. Enroll a student " << endl;
 		cout << "2. Write student data into a file " << endl;
